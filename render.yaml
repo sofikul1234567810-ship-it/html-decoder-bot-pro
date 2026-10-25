@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: html-decoder-telegram-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: MAX_FILE_MB
+        value: "5"
+      - key: PYTHON_VERSION
+        value: 3.11.9
